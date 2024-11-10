@@ -3,6 +3,7 @@ import { auth } from "../../firebase.init";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [success, setSuccess] = useState(false);
@@ -107,6 +108,9 @@ const SignUp = () => {
       </form>
       {errorMessage && <p className="text-red-600">{errorMessage}</p>}
       {success && <p className="text-green-600">Sign up is Successful.</p>}
+      <p className="ml-8 mb-4">
+        Already have an account? Please <Link to="/login">Login</Link>
+      </p>
     </div>
   );
 };
